@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   
+  #declare director field
   def movie_params
     params.require(:movie).permit(:title, :rating, :description, :release_date,:director)
   end
@@ -61,6 +62,9 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  #define a similar method in controller when called upon from the view
+  #Note that Diretor database is created by -command line "rails generate migration AddDirectorToMovies director:string"
+  #the view is rendered in similar.html.haml
   def similar
     @movie = Movie.find params[:id]
     if @movie.director.blank?
