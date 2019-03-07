@@ -28,7 +28,7 @@ Then /I should see all the movies/ do
   end
 end
 
-
+#Add new test cases
 Then(/^the director of "(.+)" should be "(.+)"/) do |title, director|
   movie = Movie.find_by(title: title)
   expect(director).to eq(movie.director)

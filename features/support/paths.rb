@@ -14,7 +14,8 @@ module NavigationHelpers
     case page_name
   
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
-      
+    
+    #adding routes for new test cases  
     when /^the home\s?page$/
       movies_path
     
